@@ -53,3 +53,41 @@ até R$ 99999,99
 
 def calcular_salario_liquido(valor_hora: float, horas_trabalhadas: int):
     """Escreva aqui em baixo a sua solução"""
+    bruto = (valor_hora * horas_trabalhadas)
+    inss = (bruto * 0.1)
+    sindicato = (bruto * 0.03)
+    fgts = (bruto * 0.11)
+    total = (inss + sindicato)
+    líquido = (bruto - total)
+    if bruto <= 900.00:
+      print(f'Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas})     : R$   {bruto:.2f}')
+      print(f'(-) IR (0%)                        : R$     0.00')
+      print(f'(-) INSS (10%)                     : R$    {inss:.2f}')
+      print(f'(-) Sindicato (3%)                 : R$     {sindicato:.2f}')
+      print(f'FGTS (11%)                         : R$    {fgts:.2f}')
+      print(f'Total de descontos                 : R$    {total:.2f}')
+      print(f'Salário Liquido                    : R$   {líquido:.2f}')
+    elif bruto > 900.00 and bruto <= 1500.00:
+      print(f'Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas})     : R$  {bruto:.2f}')
+      print(f'(-) IR (5%)                        : R$    {(bruto * 0.05):.2f}')
+      print(f'(-) INSS (10%)                     : R$   {inss:.2f}')
+      print(f'(-) Sindicato (3%)                 : R$    {sindicato:.2f}')
+      print(f'FGTS (11%)                         : R$   {fgts:.2f}')
+      print(f'Total de descontos                 : R$   {total + (bruto * 0.05):.2f}')
+      print(f'Salário Liquido                    : R$   {líquido - (bruto * 0.05):.2f}')
+    elif bruto > 1500.00 and bruto <= 2500.00:
+      print(f'Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas})    : R$  {bruto:.2f}')
+      print(f'(-) IR (10%)                       : R$   {(bruto * 0.1):.2f}')
+      print(f'(-) INSS (10%)                     : R$   {inss:.2f}')
+      print(f'(-) Sindicato (3%)                 : R$    {sindicato:.2f}')
+      print(f'FGTS (11%)                         : R$   {fgts:.2f}')
+      print(f'Total de descontos                 : R$   {total + (bruto * 0.1):.2f}')
+      print(f'Salário Liquido                    : R$  {líquido - (bruto * 0.1):.2f}')
+    else:
+      print(f'Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas})   : R$ {bruto:.2f}')
+      print(f'(-) IR (20%)                       : R$  {(bruto * 0.2):.2f}')
+      print(f'(-) INSS (10%)                     : R$  {inss:.2f}')
+      print(f'(-) Sindicato (3%)                 : R$   {sindicato:.2f}')
+      print(f'FGTS (11%)                         : R$  {fgts:.2f}')
+      print(f'Total de descontos                 : R$  {total + (bruto * 0.2):.2f}')
+      print(f'Salário Liquido                    : R$ {líquido - (bruto * 0.2):.2f}')
