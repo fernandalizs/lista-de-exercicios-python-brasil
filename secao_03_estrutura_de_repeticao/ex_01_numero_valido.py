@@ -34,3 +34,23 @@ até que o usuário informe um valor válido.
 
 def obter_numero_valido():
     """Escreva aqui em baixo a sua solução"""
+
+    # n = int(input(''))
+    # if n not in range(0, 11):
+    #     print(f'Número inválido: {n}')
+    # else:
+    #     print(n)
+
+    # try:n not in range(0, 11)
+    # except ValueError: 
+    #  print(f'Número inválido: {n}') 
+    # else:
+    #  print (f'{n}')
+
+  
+    while True:
+        n = (input(''))
+        if n.isnumeric() and (int(n) >= 0 and int(n) < 11):
+            return int(n)
+        else:
+            print(f'Número inválido: {n}')
