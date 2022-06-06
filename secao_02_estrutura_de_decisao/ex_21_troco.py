@@ -31,8 +31,8 @@ def calcular_troco(valor: int) -> str:
     res = []
     print("'", end='')
     for nota in notas:
-            if valor // nota:
-                res.append(f'{valor // nota} nota{"s" if valor//nota > 1 else ""} de R$ {nota}')
+        if valor // nota:
+            res.append(f'{valor // nota} nota{"s" if valor//nota > 1 else ""} de R$ {nota}')
             valor = valor%nota
     for i, r in enumerate(res):
             print(f'{r}{"" if i == len(res)-1 else (" e " if i == len(res)-2 else ", ")}', end= '\'\n' if  i == len(res)-1 else '')
