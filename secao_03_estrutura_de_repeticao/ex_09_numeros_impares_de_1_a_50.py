@@ -14,6 +14,5 @@ def calcular_numeros_impares_de_1_a_50() -> str:
     """Escreva aqui em baixo a sua solução"""
     numeros = list(range(1, 51, 2))
 
-    print("'", end="")
-    print(*numeros, sep = ', ', end="")
-    print("'")
+    return', '.join(map(str, numeros))
+   

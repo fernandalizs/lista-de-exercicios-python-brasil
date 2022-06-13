@@ -18,6 +18,4 @@ def calcular_numeros_no_intervalo(inicio: int, fim: int) -> str:
     """Escreva aqui em baixo a sua solução"""
     n = list(range(inicio, fim))
     a = sorted(n)
-    print("'", end="")
-    print(*a, sep = ', ', end="")
-    print("'")
+    return', '.join(map(str, a))
