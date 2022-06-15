@@ -26,3 +26,12 @@ Ex.: 5!=5.4.3.2.1=120
 
 def calcular_fatorial(n: int):
     """Escreva aqui em baixo a sua solução"""
+    fatorial = 1
+    multiplicação = []
+    for i in range(1,n+1):
+        fatorial *= i
+        multiplicação.append(i)
+    ordem = sorted(multiplicação, reverse = True)
+    ordem_print = " . ".join(map(str, ordem))
+    print(f'Fatorial de {n}:')
+    print(f'{n}! = {ordem_print} = {fatorial}')
