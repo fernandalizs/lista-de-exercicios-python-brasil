@@ -42,7 +42,6 @@ def gerar_dados_de_financiamente(valor_inicial: float):
         quantidade = 3
         for i in range(1, 5):
             divida = valor_inicial + (valor_inicial * porcentagem)
-            # print(f'R$ {divida:.2f}      {porcentagem}%             {quantidade:1}                       R${divida/quantidade:10.2f}')
             print(f'R$ {divida:<12.2f} {porcentagem:<15.0%} {quantidade:<23d} R$ {divida/quantidade:9.2f}')
             porcentagem +=0.05
             quantidade +=3
