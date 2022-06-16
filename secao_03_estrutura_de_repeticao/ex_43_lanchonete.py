@@ -109,3 +109,89 @@ comprados.
 
 def fechar_conta(*itens):
     """Escreva aqui em baixo a sua solução"""
+    print('_____________________________________________________________________________')
+    print('|                              RESUMO DA CONTA                              |')
+    print('|---------------------------------------------------------------------------|')
+    print('| Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |')
+    preco_total = quantidade_total = 0
+    codigo_quantidade = {'100':0,'101':0,'102':0,'103':0,'104':0,'105':0}
+    codigo_preco = {'100':1.2,'101':1.3,'102':1.5,'103':1.2,'104':1.3,'105':1.0}
+    codigo_nome = {'100': 'Cachorro Quente', '101': 'Bauru Simples', '102': 'Bauru com Ovo', '103': 'Hamburger',
+                   '104': 'Cheeseburger', '105': 'Refrigerante'}
+    for codigo, quantidade in itens:
+        codigo_quantidade[codigo] += quantidade
+        codigo_preco[codigo] *= codigo_quantidade.get(codigo)
+    for codigo1, nome in codigo_nome.items():
+        for codigo2, preco in codigo_preco.items():
+            for codigo3, quantidade in codigo_quantidade.items():
+                if codigo1 == codigo2 and codigo2 == codigo3 and quantidade > 0:
+                    print(f'| {nome:<16} | {codigo1:<7}| {(preco/quantidade):<20.2f}|{quantidade:>11} |{preco:>11.2f} |')
+                    preco_total += preco
+                    quantidade_total += quantidade
+    print('|---------------------------------------------------------------------------|')
+    print('| Total Geral:'.ljust(49), f'|{quantidade_total:>11} |{preco_total:>11.2f} |')
+    print('-----------------------------------------------------------------------------')
+
+
+
+    # item = {
+    #     '100': ('Cachorro Quente', '1.20'),
+    #     '101': ('Bauru Simples', '1.30'),
+    #     '102': ('Bauru com Ovo', '1.50'),
+    #     '103': ('Hamburger', '1.20'),
+    #     '104': ('Cheeseburguer', '1.30'),
+    #     '105': ('Refrigerante ', '1.00'),
+    # }
+    # valor = {
+    #     '100': (1.20),
+    #     '101': (1.30),
+    #     '102': (1.50),
+    #     '103': (1.20),
+    #     '104': (1.30),
+    #     '105': (1.00),
+    # }
+
+    # especificacao = ''
+    # preco_unitario = 0
+    # preco = 0
+
+    # print('_____________________________________________________________________________')
+    # print('|                              RESUMO DA CONTA                              |')
+    # print('|---------------------------------------------------------------------------|')
+    # print('| Epecificação     | Código | Preço Unitário (R$) | Quantidade | Total (R$) |')
+
+    # while 
+    # for codigo, quantidade in itens:
+    #     if codigo == '100':
+    #         especificacao = 'Cachorro Quente'
+    #         preco_unitario = 1.20
+    #         preco = quantidade * preco_unitario
+    #     if codigo == '101':
+    #         especificacao = 'Bauru Simples'
+    #         preco_unitario = 1.30
+    #         preco = quantidade * preco_unitario
+    #     if codigo == '102':
+    #         especificacao = 'Bauru com ovo'
+    #         preco_unitario = 1.50
+    #         preco = quantidade * preco_unitario
+    #     if codigo == '103':
+    #         especificacao = 'Hambúrguer'
+    #         preco_unitario = 1.20
+    #         preco = quantidade * preco_unitario
+    #     if codigo == '104':
+    #         especificacao = 'Cheeseburguer'
+    #         preco_unitario = 1.30
+    #         preco = quantidade * preco_unitario
+    #     if codigo == '105':
+    #         especificacao = 'Refrigerante'
+    #         preco_unitario = 1.00
+    #         preco = quantidade * preco_unitario
+
+    # print(f'| {especificacao}'.ljust(18), f'| {codigo}    | {preco_unitario:.2f}                |          {quantidade} |       {int(preco):.2f} |')
+
+    # # quantidade_total = sum(quantidade)
+    # # preco_total = sum(preco)
+
+    # print('|---------------------------------------------------------------------------|')
+    # print('| Total Geral:'.ljust(49), f'|{quantidade:>11} |{preco:>11.2f} |')
+    # print('-----------------------------------------------------------------------------')
