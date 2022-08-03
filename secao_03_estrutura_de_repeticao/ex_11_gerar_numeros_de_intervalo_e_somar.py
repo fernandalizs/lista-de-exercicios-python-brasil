@@ -16,5 +16,15 @@ Também mostre a soma dos números da sequência.
 """
 
 
+from ntpath import join
+
+
 def calcular_numeros_no_intervalo_e_somar(inicio: int, fim: int) -> str:
     """Escreva aqui em baixo a sua solução"""
+    n = list(range(inicio, fim))
+    soma = sum(n)
+    a = sorted(n)
+    while inicio < 0 and fim < inicio:
+        return f'Sequência: vazia. Soma: {soma}'
+    else:
+        return f"Sequência: {', '.join(map(str, a))}. Soma: {soma}"

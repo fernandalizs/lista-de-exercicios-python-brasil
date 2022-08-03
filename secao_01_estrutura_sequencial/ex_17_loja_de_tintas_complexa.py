@@ -30,3 +30,30 @@ Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, consid
 
 def calcular_latas_e_preco_de_tinta():
     """Escreva aqui em baixo a sua solução"""
+    import math
+    area = float(input('Digite a área em metros quadrados: '))
+    area_com_folga = area * 1.1
+    litros_a_serem_usados = math.ceil(area_com_folga / 6)
+    print(f'Você deve comprar {litros_a_serem_usados} litros de tinta.')
+
+    # latas 18 litros
+    numero_latas = math.ceil(litros_a_serem_usados/18)
+    valor_latas = numero_latas*80
+    sobra_latas = math.floor(numero_latas*18-litros_a_serem_usados)
+    print(f'Você pode comprar {numero_latas} lata(s) de 18 litros a um custo de R$ {valor_latas}. Vão sobrar {sobra_latas:.1f} litro(s) de tinta.')
+
+    # latas 3.6 litros
+    numero_galoes = math.ceil(litros_a_serem_usados/3.6)
+    valor_galoes = numero_galoes*25
+    sobra_galoes = numero_galoes*3.6-litros_a_serem_usados
+    print(f'Você pode comprar {numero_galoes} lata(s) de 3.6 litros a um custo de R$ {valor_galoes}. Vão sobrar {sobra_galoes:.1f} litro(s) de tinta.')
+
+    # menor custo
+    latas_18 = math.floor(litros_a_serem_usados/18)
+    valor_de_latas = latas_18*80
+    litros_faltantes = litros_a_serem_usados % 18
+    galoes_3 = math.ceil(litros_faltantes/3.6)
+    valor_de_galoes = galoes_3*25
+    total = valor_de_latas + valor_de_galoes
+    resto = (latas_18*18)+(galoes_3*3.6)-litros_a_serem_usados
+    print(f'Para menor custo, você pode comprar {latas_18} lata(s) de 18 litros e {galoes_3} galão(ões) de 3.6 litros a um custo de R$ {total}. Vão sobrar {resto:.1f} litro(s) de tinta.')
